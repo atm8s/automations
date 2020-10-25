@@ -1,0 +1,19 @@
+on:
+  rss:
+    url: http://rss.ptt.cc/Lifeismoney.xml
+    config:
+      filter:
+        title:
+          $regex: line point
+          $options: i
+jobs:
+  line_push_message_job:
+    runs-on: ubuntu-latest
+    name: LINE push message
+    steps:
+      - name: Push LINE message
+        uses: ufoo68/line-push-message@v1.4
+        with:
+          user-id: ${{ secrets.LINE_BULLETIN_USER_ID }}
+          message: ${{ on.rss.outputs.title }} - ${{on.rss.outputs.link}}
+          channel-access-token: ${{ secrets.LINE_BULLETIN_CHANNEL_ACCESS_TOKEN }}
