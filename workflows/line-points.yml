@@ -12,7 +12,7 @@ jobs:
     name: LINE push message
     steps:
       - name: Push LINE message
-        uses: ufoo68/line-push-message@v1.4
+        uses: ufoo68/line-push-message@v1.6
         with:
           user-id: ${{ secrets.LINE_BULLETIN_USER_ID }}
           message: ${{ on.rss.outputs.title }} - ${{on.rss.outputs.link}}
