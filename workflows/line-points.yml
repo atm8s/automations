@@ -4,7 +4,7 @@ on:
     config:
       filter:
         title:
-          $regex: line point
+          $regex: line\s?point
           $options: i
 jobs:
   line_push_message_job:
