@@ -1,6 +1,6 @@
 on:
   rss:
-    url: https://rss.ptt.cc/Lifeismoney.xml
+    url: https://www.ptt.cc/atom/Lifeismoney.xml
     config:
       filter:
         title:
